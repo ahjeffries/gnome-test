@@ -1,0 +1,25 @@
+var tincan = new TinCan (
+    {
+        recordStores: [
+            {
+                endpoint: "https://cloud.scorm.com/tc/public/",
+                username: "<Test User>",
+                password: "<Test User's Password>",
+                allowFail: false
+            }
+        ]
+    }
+);
+tincan.sendStatement(
+    {
+        actor: {
+            mbox: "mailto:info@tincanapi.com"
+        },
+        verb: {
+            id: "http://adlnet.gov/expapi/verbs/attempted"
+        },
+        target: {
+            id: "http://rusticisoftware.github.com/TinCanJS"
+        }
+    }
+);
